@@ -1,0 +1,361 @@
+/* Global styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  padding: 0 1.25rem;
+}
+.underline {
+  text-decoration: underline;
+}
+.italic {
+  font-style: italic;
+}
+.text-red {
+  color: #da6156;
+}
+.bold {
+  font-weight: bold;
+}
+img {
+  max-width: 100%;
+}
+/* Hero */
+.hero {
+  padding-top: 6rem;
+  padding-bottom: 11.125rem;
+  background-image: url('./images/hero-section.jpg');
+  background-size: cover;
+  background-position: center bottom;
+}
+/* For browsers that support WebP */
+@supports (--css: variables) {
+  .hero {
+    background-image: url('./images/hero-section.webp');
+  }
+}
+.badge {
+  color: #fff;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+  display: inline-block;
+  padding: 0.625rem 1.125rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  background: #da6156;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+.badge img {
+  width: 1.5rem;
+  height: auto;
+}
+
+h1 {
+  color: #000;
+  text-align: center;
+  font-size: 3.875rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  max-width: 80rem;
+  margin: 1.875rem auto 0;
+}
+
+h1 .highlight {
+  line-height: 1;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  background-color: #ffd54a;
+}
+
+.highlight-green {
+  color: #2dca50;
+}
+
+.subheading {
+  color: #fff;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.06;
+  background-color: #da6156;
+  border-radius: 0.125rem;
+  max-width: fit-content;
+  margin: 3.25rem auto 3.875rem;
+  padding: 0.125rem 0;
+}
+
+.cta-btn {
+  color: #000;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 0.375rem;
+  background: #aef680;
+  box-shadow: 0rem -0.625rem 0rem 0rem rgba(113, 182, 115, 0.4) inset;
+  padding: 2rem 3rem 2.5rem;
+  display: flex;
+  gap: 0.9375rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  letter-spacing: 0.04em;
+}
+.cta-btn img {
+  filter: drop-shadow(0rem 0.125rem 0rem rgba(0, 0, 0, 0.15));
+  width: 2.6875rem;
+  height: auto;
+}
+.content {
+  display: flex;
+  padding: 0 5rem;
+  margin-top: 7.1875rem;
+  padding-bottom: 7.5rem;
+}
+.content > * {
+  flex-basis: 47%;
+  max-width: 50%;
+}
+.text-content {
+  flex-basis: 60%;
+  margin-top: 4.625rem;
+}
+.text-content h2 {
+  font-size: 3.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.text-content h2 span {
+  font-weight: 800;
+  font-style: italic;
+}
+.text-content ul {
+  list-style: none;
+  margin-top: 3.25rem;
+}
+.text-content ul li {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.42;
+  display: flex;
+  gap: 1.125rem;
+  margin-bottom: 1.375rem;
+}
+
+.text-content li::before {
+  content: '';
+  width: 1.75rem;
+  height: 1.75rem;
+  display: inline-block;
+  background-image: url('./images/check-circle.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+}
+.content .cta-btn {
+  font-size: 1.8145rem;
+  margin-top: 3.125rem;
+  padding: 1.625rem 2.5rem 2.1875rem;
+  margin-right: -2.3125rem;
+}
+@media (max-width: 64em) {
+  html {
+    font-size: 0.75rem;
+  }
+  .content .cta-btn {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 48em) {
+  html {
+    font-size: 0.5rem;
+  }
+  .badge {
+    font-size: 1.5rem;
+  }
+  h1 {
+    font-size: 3.25rem;
+  }
+}
+@media (max-width: 31.25em) {
+  .subheading {
+    text-align: center;
+    font-size: 1.75rem;
+  }
+
+  .content > * {
+    flex-basis: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .content .cta-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .text-content li::before {
+    margin-top: 0.1em;
+  }
+  .cta-btn {
+    padding: 2rem 1rem 2.5rem;
+  }
+  .content {
+    flex-wrap: wrap;
+  }
+}
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+  display: flex;
+  background: white;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  max-width: 46.5rem;
+  width: 90%;
+  position: relative;
+  z-index: 10;
+}
+
+.modal-image {
+  background-color: #fbfbfb;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-right: 2.1875rem;
+  padding-top: 3.125rem;
+}
+
+.modal-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.modal-form {
+  flex: 1;
+  padding: 1.25rem;
+  padding: 3.125rem 3.125rem 3.125rem 3.25rem;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 2.3125rem;
+  height: auto;
+}
+.close-btn img {
+  width: 2.3125rem;
+  height: auto;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-top: 54px;
+}
+.modal-form p {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: 1.25rem;
+}
+
+.form {
+  margin-top: 1.25rem;
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  border: 0.0625rem solid #c8c8c8;
+  background-color: #f8f8f8;
+  border-radius: 0.625rem;
+  padding: 1.0625rem 1.25rem;
+
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.875;
+}
+
+.submit-btn {
+  background-color: #aef680;
+
+  color: #000;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.67;
+  text-decoration: underline;
+
+  padding: 1.0625rem 1.25rem;
+  border: none;
+  border-radius: 0.1875rem;
+  cursor: pointer;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-top: 0.5rem;
+  border-radius: 0.625rem;
+  text-decoration-thickness: 0.05em;
+}
+.submit-btn img {
+  width: 1.25rem;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .modal-image {
+    display: none;
+  }
+  h3 {
+    margin-top: 0;
+  }
+}
