@@ -69,11 +69,12 @@
           <button class="close-btn" id="closeModalBtn"><img src="./assets/images/x-btn.svg" alt="" /></button>
           <h3>Enter Your Details to Access The Secret Training Video.</h3>
           <p>Your information is secure and will not be shared with anyone.</p>
-          <form class="form">
-            <input type="text" placeholder="First Name" required />
-            <input type="email" placeholder="Email Address" required />
+          <form class="form" id="optinForm">
+            <input type="text" placeholder="First Name" id="firstName" name="firstName" required />
+            <input type="email" placeholder="Email Address" id="email" name="email" required />
             <button type="submit" class="submit-btn">Send The Video To My Email <img src="./assets/images/email-icon.svg" alt="" /></button>
           </form>
+          <div id="message" class="error"></div>
         </div>
       </div>
     </div>
